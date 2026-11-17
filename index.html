@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SEAD-SA Income Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>South Africa Income Dashboard</h1>
+      <p>Explore provincial income and inequality using SEAD-SA data.</p>
+    </header>
+
+    <main>
+      <section aria-labelledby="filters-heading">
+        <h2 id="filters-heading">Filters</h2>
+        <label for="province-filter">Province:</label>
+        <select id="province-filter" name="province">
+          <option value="all">All provinces</option>
+          <option value="EC">Eastern Cape</option>
+          <option value="FS">Free State</option>
+          <option value="GT">Gauteng</option>
+          <option value="KZN">KwaZulu-Natal</option>
+          <option value="LIM">Limpopo</option>
+          <option value="MP">Mpumalanga</option>
+          <option value="NC">Northern Cape</option>
+          <option value="NW">North West</option>
+          <option value="WC">Western Cape</option>
+        </select>
+
+        <label for="year-filter">Tax year:</label>
+        <select id="year-filter" name="year">
+          <option value="all">All years</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+        </select>
+        <p id="filter-status" aria-live="polite">Showing all provinces and years.</p>
+      </section>
+
+      <section aria-labelledby="summary-heading">
+        <h2 id="summary-heading">Summary</h2>
+        <article>
+          <h3>Median income</h3>
+          <p id="median-income-value">—</p>
+        </article>
+        <article>
+          <h3>Average Gini coefficient</h3>
+          <p id="gini-value">—</p>
+        </article>
+      </section>
+
+      <section aria-labelledby="charts-heading">
+        <h2 id="charts-heading">Charts</h2>
+        <article>
+          <h3>Median income over time</h3>
+          <canvas id="income-trend-chart" aria-label="Median income over time" role="img"></canvas>
+        </article>
+        <article>
+          <h3>Median income by province</h3>
+          <canvas id="province-income-chart" aria-label="Median income comparison by province" role="img"></canvas>
+        </article>
+        <article>
+          <h3>Gini coefficient by province</h3>
+          <canvas id="gini-chart" aria-label="Gini coefficient comparison by province" role="img"></canvas>
+        </article>
+      </section>
+
+      <section aria-labelledby="data-heading">
+        <h2 id="data-heading">About the dataset</h2>
+        <p>
+          The Spatial Economic Activity Data: South Africa (SEAD-SA) includes
+          province-level tax panel estimates. This dashboard uses median
+          income and Gini coefficient data for 2014–2025.
+        </p>
+        <p>
+          Source:
+          <a href="https://spatialtaxdata.org.za/download-data-landing">
+            SEAD-SA data download page
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>SEAD-SA Income Dashboard</p>
+    </footer>
+  </body>
+</html>
